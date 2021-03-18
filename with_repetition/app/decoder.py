@@ -1,4 +1,4 @@
-from app.helper.framework import strbit2int
+from helper.framework import strbit2int
 
 # 
 # For each N bits, find the most frequent occurrence

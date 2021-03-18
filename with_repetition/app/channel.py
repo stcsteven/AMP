@@ -1,4 +1,4 @@
-from app.helper.framework import strbit2int
+from helper.framework import strbit2int
 import random
 
 bad_bits_probability = 0.1
