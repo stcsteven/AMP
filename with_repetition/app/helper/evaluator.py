@@ -7,3 +7,6 @@ def evaluate_bits(message, guess):
     counter += 1 if message[i]==guess[i] else 0
   
   return (counter*100/len(message))
+
+def average(samples, total):
+  return samples/total
