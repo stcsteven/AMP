@@ -18,6 +18,10 @@ def main():
         received_message =  corrupt_message(coded_transmission)
         decoded_message = decode_message(received_message)
         
+        output_file_name = "../datasets/output/"+ str(i) + ".txt"
+        save(output_file_name, bits_to_str(decoded_message))
+        
+        # Evaluate the Approach
         score = evaluate_bits(clean_message, decoded_message)
         print("Message: "+ str(i) + " => Accuracy: "+ str(score) + "%")
         total_score += score
