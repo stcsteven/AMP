@@ -1,15 +1,28 @@
 from helper.framework import *
+from helper.evaluator import evaluate_bits
 from encoder import encode
 from channel import *
 from decoder import decode_message
 
 # Main Function
 def main():
-    message = open_file("../datasets/input/1.txt")
-    clean_message, coded_transmission = encode(message)
-    received_message =  corrupt_message(coded_transmission)
-    decoded_message = decode_message(received_message)
-    print(bits_to_str(decoded_message))
+    total_score = 0
+    total_cases = 13
+    for i in range(0, total_cases):
+        file_name = "../datasets/input/"+ str(i) + ".txt"
+        message = open_file(file_name)
+        # 
+        # Main Algorithm
+        # 
+        clean_message, coded_transmission = encode(message)
+        received_message =  corrupt_message(coded_transmission)
+        decoded_message = decode_message(received_message)
+        
+        score = evaluate_bits(clean_message, decoded_message)
+        print("Message: "+ str(i) + " => Accuracy: "+ str(score) + "%")
+        total_score += score
+    
+    print("Average Accuracy: "+ str(total_score/total_cases)+"%" )
 
 if __name__ == "__main__":
     main()
