@@ -7,22 +7,28 @@ from decoder import decode_message
 # Main Function
 def main():
     total_score = 0
-    total_cases = 11
+    total_cases = 10
     for i in range(0, total_cases):
         file_name = "../datasets/input/"+ str(i) + ".txt"
         message = open_file(file_name)
+        if not is_binary_message(message):
+            message = str_to_bits(message)
+            save(file_name, message) 
         # 
         # Main Algorithm
         # 
-        clean_message, coded_transmission = encode(message)
-        received_message =  corrupt_message(coded_transmission)
-        decoded_message = decode_message(received_message)
+        coded_transmission = encode(message)
         
+        received_message =  corrupt_message(coded_transmission)
+        channel_file_name = "../datasets/channel/"+ str(i) + ".txt"
+        save(channel_file_name, received_message)
+        
+        decoded_message = decode_message(received_message)
         output_file_name = "../datasets/output/"+ str(i) + ".txt"
-        save(output_file_name, bits_to_str(decoded_message))
+        save(output_file_name, decoded_message)
         
         # Evaluate the Approach
-        score = evaluate_bits(clean_message, decoded_message)
+        score = evaluate_bits(message, decoded_message)
         print("Message: "+ str(i) + " => Accuracy: "+ str(score) + "%")
         total_score += score
     
