@@ -13,7 +13,7 @@ The equations above can be represented as matrix multiplication as follows:
 ![image](https://user-images.githubusercontent.com/25889114/112511103-a9fd7a80-8dc4-11eb-8ca7-64fd17549eb0.png)
 
 
-where:
+where: <br>
 d: the message bits <br>
 p<sub>n</sub>: the n<sup>th</sup> parity bit <br>
 <ins>t</ins>: the coded transmission which consists of [d|p] <br>
@@ -21,9 +21,8 @@ p<sub>n</sub>: the n<sup>th</sup> parity bit <br>
 ### Decoding Process
 In order to decode 7.4 Hamming, we need to invert the process such as follows:
 ![image](https://user-images.githubusercontent.com/25889114/112511159-baadf080-8dc4-11eb-8700-1afbd7200399.png)
-
-
-where:
+<br>
+where: <br>
 <ins>t</ins>: the coded transmission which consists of [d|p]
 
 Let's say _abc_ are the assigned bits that satisfies each equations t5 until t7 in (3) respectively, it is found out that:
