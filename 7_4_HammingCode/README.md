@@ -11,6 +11,8 @@ According to the rules described in the graph, we can define the rule as followi
 
 The equations above can be represented as matrix multiplication as follows:
 ![image](https://user-images.githubusercontent.com/25889114/112511103-a9fd7a80-8dc4-11eb-8ca7-64fd17549eb0.png)
+
+
 where:
 d: the message bits
 p<sub>n</sub>: the n<sup>th</sup> parity bit
@@ -19,6 +21,8 @@ p<sub>n</sub>: the n<sup>th</sup> parity bit
 ### Decoding Process
 In order to decode 7.4 Hamming, we need to invert the process such as follows:
 ![image](https://user-images.githubusercontent.com/25889114/112511159-baadf080-8dc4-11eb-8700-1afbd7200399.png)
+
+
 where:
 <ins>t</ins>: the coded transmission which consists of [d|p]
 
