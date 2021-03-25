@@ -14,9 +14,9 @@ The equations above can be represented as matrix multiplication as follows:
 
 
 where:
-d: the message bits
-p<sub>n</sub>: the n<sup>th</sup> parity bit
-<ins>t</ins>: the coded transmission which consists of [d|p]
+d: the message bits <br>
+p<sub>n</sub>: the n<sup>th</sup> parity bit <br>
+<ins>t</ins>: the coded transmission which consists of [d|p] <br>
 
 ### Decoding Process
 In order to decode 7.4 Hamming, we need to invert the process such as follows:
